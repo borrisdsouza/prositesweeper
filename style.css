@@ -153,6 +153,23 @@ button:active {
   transform: translateY(1px);
 }
 
+.button--primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.button--ghost {
+  background: #fff;
+  color: var(--accent-dark);
+  border: 2px solid rgba(0, 47, 255, 0.15);
+  box-shadow: none;
+}
+
+.button--ghost:hover {
+  border-color: rgba(0, 47, 255, 0.35);
+  color: var(--primary);
+}
+
 .hud {
   margin: 2rem 0;
   display: grid;
@@ -192,6 +209,9 @@ button:active {
 .board-wrapper {
   display: flex;
   justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 
 .board {
@@ -330,18 +350,6 @@ button:active {
   justify-content: center;
 }
 
-.modal__ghost {
-  background: transparent;
-  color: var(--accent-dark);
-  border: 2px solid rgba(0, 47, 255, 0.25);
-  box-shadow: none;
-}
-
-.modal__ghost:hover {
-  color: var(--primary);
-  border-color: rgba(0, 47, 255, 0.5);
-}
-
 .modal__close {
   position: absolute;
   top: 0.65rem;
@@ -381,6 +389,20 @@ button:active {
 
 .leaderboard-list strong {
   color: var(--accent-dark);
+}
+
+/*.board override for overflow is above*/
+
+@media (max-width: 720px) {
+  .header-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .controls {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 600px) {
