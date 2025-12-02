@@ -173,7 +173,7 @@ function initGame() {
   hintBtn.disabled = false;
   boardEl.style.setProperty("--size", boardSize);
   boardEl.innerHTML = "";
-  statusText.textContent = "Tap a tile to scout it!";
+  statusText.textContent = "Tap to scout, right-click or hold to flag hazards!";
   hazardLeftEl.textContent = hazardCount;
 
   grid = [];
@@ -219,11 +219,43 @@ function initGame() {
     const tile = document.createElement("button");
     tile.className = "cell";
     tile.setAttribute("aria-label", "Hidden site");
+    
+    // Regular click for reveal
     tile.addEventListener("click", () => handleReveal(cell));
+    
+    // Right-click for flagging (desktop)
     tile.addEventListener("contextmenu", (event) => {
       event.preventDefault();
       toggleFlag(cell);
     });
+    
+    // Long-press for flagging (mobile)
+    let pressTimer = null;
+    let longPressTriggered = false;
+    
+    tile.addEventListener("touchstart", (event) => {
+      longPressTriggered = false;
+      pressTimer = setTimeout(() => {
+        longPressTriggered = true;
+        toggleFlag(cell);
+        // Add haptic feedback if available
+        if (navigator.vibrate) {
+          navigator.vibrate(50);
+        }
+      }, 500); // 500ms for long press
+    });
+    
+    tile.addEventListener("touchend", (event) => {
+      clearTimeout(pressTimer);
+      if (longPressTriggered) {
+        event.preventDefault();
+      }
+    });
+    
+    tile.addEventListener("touchmove", () => {
+      clearTimeout(pressTimer);
+    });
+    
     cell.element = tile;
     boardEl.appendChild(tile);
   });
