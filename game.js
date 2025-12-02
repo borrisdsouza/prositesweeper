@@ -75,9 +75,7 @@ const leaderboardStatus = document.querySelector("#leaderboardStatus");
 const leaderboardCloseBtn = document.querySelector("#leaderboardCloseBtn");
 
 const WIN_STATUSES = [
-  () => "Site is clear, paperwork approved, pour the slab!",
-  () => "No surprises! Call procurement and start lining up trades.",
-  () => "Survey team cheered—this parcel is restaurant-ready.",
+  () => "Smashed it! You cleared the hazards and delivered the project on time.",
 ];
 const SCORES_ENDPOINT = "/scores";
 
@@ -389,9 +387,9 @@ function endGame(won, hazard) {
     finishedAt: new Date().toISOString(),
   };
   if (won) {
-    statusText.textContent = "All clear! Time to break ground on restaurants.";
+    statusText.textContent = "Smashed it! You cleared the hazards and delivered the project on time.";
     const winStatus = randomItem(WIN_STATUSES)();
-    showModal("🛠️", winStatus, { showClaim: true });
+    showModal("🏙️", winStatus, { showClaim: true });
   } else {
     revealAllHazards();
     const lossMessage = hazard?.lossText || "The crew hit a wild hazard. Map reset!";
