@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1764644877252,
+    "name": "Borris",
+    "email": "borris@gmail.com",
+    "difficulty": "medium",
+    "difficultyLabel": "Medium",
+    "outcome": "Hit Surprise KFC franchise",
+    "won": false,
+    "durationMs": 1839,
+    "prettyDuration": "00:02",
+    "finishedAt": "2025-12-02T03:07:49.987Z"
+  },
+  {
+    "id": 1764644998716,
+    "name": "Jane",
+    "email": "Jane@gmail.com",
+    "difficulty": "medium",
+    "difficultyLabel": "Medium",
+    "outcome": "Hit Mystery illness",
+    "won": false,
+    "durationMs": 4359,
+    "prettyDuration": "00:04",
+    "finishedAt": "2025-12-02T03:09:48.434Z"
+  },
+  {
+    "id": 1764645065671,
+    "name": "Molly",
+    "email": "Molly@gmail.com",
+    "difficulty": "medium",
+    "difficultyLabel": "Medium",
+    "outcome": "Hit Surprise KFC franchise",
+    "won": false,
+    "durationMs": 616,
+    "prettyDuration": "00:01",
+    "finishedAt": "2025-12-02T03:10:54.325Z"
+  }
+]

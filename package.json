@@ -1,0 +1,11 @@
+{
+  "name": "pro-site-sweeper",
+  "version": "1.0.0",
+  "description": "Construction-themed minesweeper parody with leaderboard support.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
